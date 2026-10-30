@@ -11,7 +11,7 @@ export function listerParEtat(alertes, etat) {
   const ids = alertes
     .filter((alerte) => alerte.etat === etat)
     .map((alerte) => alerte.id);
-  return ids.length > 0 ? ids.join(', ') : 'aucune';
+  return ids.length === 0 ? "aucune" : ids.join(", ");
 }
 
 // Renvoie le texte complet du rapport (voir fiches/5-equipe-rapport.md).
@@ -23,6 +23,10 @@ export function construireRapport(donnees, date) {
   const productionTotale = bilan.reduce((total, ligne) => total + ligne.kg, 0);
   const revenuTotal = bilan.reduce((total, ligne) => total + ligne.revenu, 0);
   const meilleureParcelle = classement[0];
+
+  if (!meilleureParcelle) {
+    throw new Error("Impossible de construire le rapport sans parcelle classée.");
+  }
 
   const lignes = [
     `=== RAPPORT AGRISUIVI DU ${date} ===`,
