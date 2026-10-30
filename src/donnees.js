@@ -31,11 +31,47 @@ export async function chargerDonnees(dossier) {
 // Exemple : creerReleve('p07', '64', '29', '2026-10-29')
 //   → { parcelle: 'P07', date: '2026-10-29', humidite: 64, temperature: 29 }
 export function creerReleve(parcelle, humiditeTexte, temperatureTexte, date) {
-  throw new Error("TODO Membre 4 : coder creerReleve dans src/donnees.js");
+  if (typeof parcelle !== "string" || parcelle.trim() === "") {
+    throw new Error("La parcelle est obligatoire");
+  }
+  const idParcelle = parcelle.trim().toUpperCase();
+
+  const humidite = Number(humiditeTexte);
+  if (
+    humiditeTexte === undefined ||
+    String(humiditeTexte).trim() === "" ||
+    !Number.isFinite(humidite)
+  ) {
+    throw new Error("L'humidité doit être un nombre");
+  }
+  if (humidite < 0 || humidite > 100) {
+    throw new Error("L'humidité doit être entre 0 et 100");
+  }
+
+  const temperature = Number(temperatureTexte);
+  if (
+    temperatureTexte === undefined ||
+    String(temperatureTexte).trim() === "" ||
+    !Number.isFinite(temperature)
+  ) {
+    throw new Error("La température doit être un nombre");
+  }
+
+  return { parcelle: idParcelle, date, humidite, temperature };
 }
+
+
 
 // Ajoute le relevé à la fin du fichier JSON, enregistre le fichier,
 // puis renvoie le nouveau nombre de relevés.
+
 export async function ajouterReleve(chemin, releve) {
-  throw new Error("TODO Membre 4 : coder ajouterReleve dans src/donnees.js");
+  const releves = await lireJson(chemin);
+  if (!Array.isArray(releves)) {
+    throw new Error(`Le fichier ${chemin} ne contient pas une liste de relevés`);
+  }
+  releves.push(releve);
+  await writeFile(chemin, JSON.stringify(releves, null, 2), "utf-8");
+  return releves.length;
 }
+
