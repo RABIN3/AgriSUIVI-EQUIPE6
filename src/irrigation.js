@@ -3,9 +3,7 @@
 
 // Renvoie seulement les relevés de la parcelle demandée.
 export function relevesDeParcelle(releves, idParcelle) {
-  throw new Error(
-    "TODO Membre 2 : coder relevesDeParcelle dans src/irrigation.js",
-  );
+  return reveles.filter((r) => r.parcelle === idparcelle);
 }
 
 // Renvoie la moyenne des humidités, arrondie à l'entier le plus proche.
