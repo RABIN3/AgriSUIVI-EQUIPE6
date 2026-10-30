@@ -158,9 +158,9 @@ La date de la première ligne est celle du jour. Le formateur testera aussi votr
 
 ## Notre équipe
 
-| Rôle                  | Prénom et nom | Compte GitHub |
-| --------------------- | ------------- | ------------- |
-| Membre 1 — Parcelles  |               |               |
-| Membre 2 — Irrigation |               |               |
-| Membre 3 — Récoltes   |               |               |
-| Membre 4 — Données    |               |               |
+| Rôle                  | Prénom et nom | Compte GitHub  |
+| --------------------- | ------------- |-------------   |
+| Membre 1 — Parcelles  |KOFFI ASTRID   |batiyeeee22     |
+| Membre 2 — Irrigation |OBA GHISLAIN   |ghislain oba    |
+| Membre 3 — Récoltes   |KOKOBO PAULE   |kokobopaule     |
+| Membre 4 — Données    |KOKO RABIN     |RABIN3          |
