@@ -1,0 +1,10 @@
+[
+  { "id": "P01", "producteur": "Awa Diallo", "localite": "Soubré", "culture": "cacao", "surface": 3 },
+  { "id": "P02", "producteur": "Akissi Brou", "localite": "Daloa", "culture": "cacao", "surface": 2 },
+  { "id": "P03", "producteur": "Fanta Sanogo", "localite": "Korhogo", "culture": "anacarde", "surface": 4 },
+  { "id": "P04", "producteur": "Ibrahim Ouattara", "localite": "Korhogo", "culture": "mais", "surface": 1.5 },
+  { "id": "P05", "producteur": "Adjoua N'Dri", "localite": "Bouaké", "culture": "manioc", "surface": 2 },
+  { "id": "P06", "producteur": "Mariam Diabaté", "localite": "Yamoussoukro", "culture": "tomate", "surface": 0.5 },
+  { "id": "P07", "producteur": "Seydou Bamba", "localite": "Gagnoa", "culture": "riz", "surface": 1 },
+  { "id": "P08", "producteur": "Aya Yapi", "localite": "Daloa", "culture": "cacao", "surface": 1.5 }
+]

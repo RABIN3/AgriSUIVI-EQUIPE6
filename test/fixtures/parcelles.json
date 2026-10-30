@@ -1,0 +1,4 @@
+[
+  { "id": "A1", "producteur": "Ama", "localite": "Man", "culture": "cacao", "surface": 2 },
+  { "id": "A2", "producteur": "Moussa", "localite": "Man", "culture": "cacao", "surface": 1 }
+]

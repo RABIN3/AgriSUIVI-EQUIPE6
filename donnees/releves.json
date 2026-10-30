@@ -1,0 +1,23 @@
+[
+  { "parcelle": "P01", "date": "2026-10-26", "humidite": 55, "temperature": 28 },
+  { "parcelle": "P01", "date": "2026-10-27", "humidite": 58, "temperature": 27 },
+  { "parcelle": "P01", "date": "2026-10-28", "humidite": 52, "temperature": 29 },
+  { "parcelle": "P02", "date": "2026-10-26", "humidite": 38, "temperature": 31 },
+  { "parcelle": "P02", "date": "2026-10-27", "humidite": 35, "temperature": 32 },
+  { "parcelle": "P02", "date": "2026-10-28", "humidite": 32, "temperature": 33 },
+  { "parcelle": "P03", "date": "2026-10-26", "humidite": 25, "temperature": 33 },
+  { "parcelle": "P03", "date": "2026-10-27", "humidite": 22, "temperature": 34 },
+  { "parcelle": "P03", "date": "2026-10-28", "humidite": 28, "temperature": 32 },
+  { "parcelle": "P04", "date": "2026-10-26", "humidite": 30, "temperature": 34 },
+  { "parcelle": "P04", "date": "2026-10-27", "humidite": 28, "temperature": 35 },
+  { "parcelle": "P04", "date": "2026-10-28", "humidite": 29, "temperature": 34 },
+  { "parcelle": "P05", "date": "2026-10-26", "humidite": 66, "temperature": 27 },
+  { "parcelle": "P05", "date": "2026-10-27", "humidite": 70, "temperature": 26 },
+  { "parcelle": "P05", "date": "2026-10-28", "humidite": 68, "temperature": 27 },
+  { "parcelle": "P06", "date": "2026-10-26", "humidite": 50, "temperature": 30 },
+  { "parcelle": "P06", "date": "2026-10-27", "humidite": 48, "temperature": 31 },
+  { "parcelle": "P06", "date": "2026-10-28", "humidite": 52, "temperature": 30 },
+  { "parcelle": "P08", "date": "2026-10-26", "humidite": 72, "temperature": 26 },
+  { "parcelle": "P08", "date": "2026-10-27", "humidite": 75, "temperature": 25 },
+  { "parcelle": "P08", "date": "2026-10-28", "humidite": 74, "temperature": 26 }
+]

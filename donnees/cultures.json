@@ -1,0 +1,8 @@
+[
+  { "code": "cacao", "nom": "Cacao", "prixKg": 2000, "humiditeMin": 40, "humiditeMax": 70 },
+  { "code": "anacarde", "nom": "Anacarde", "prixKg": 400, "humiditeMin": 20, "humiditeMax": 50 },
+  { "code": "mais", "nom": "Maïs", "prixKg": 200, "humiditeMin": 35, "humiditeMax": 65 },
+  { "code": "manioc", "nom": "Manioc", "prixKg": 100, "humiditeMin": 30, "humiditeMax": 60 },
+  { "code": "tomate", "nom": "Tomate", "prixKg": 300, "humiditeMin": 50, "humiditeMax": 80 },
+  { "code": "riz", "nom": "Riz", "prixKg": 300, "humiditeMin": 60, "humiditeMax": 90 }
+]

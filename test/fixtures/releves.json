@@ -1,0 +1,5 @@
+[
+  { "parcelle": "A1", "date": "2026-10-26", "humidite": 45, "temperature": 29 },
+  { "parcelle": "A1", "date": "2026-10-27", "humidite": 41, "temperature": 30 },
+  { "parcelle": "A2", "date": "2026-10-26", "humidite": 72, "temperature": 27 }
+]

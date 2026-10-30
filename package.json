@@ -1,0 +1,18 @@
+{
+  "name": "agrisuivi",
+  "version": "1.0.0",
+  "description": "Tableau de bord en ligne de commande pour une coopérative agricole",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node app.js",
+    "rapport": "node app.js rapport",
+    "test": "node --test",
+    "test:parcelles": "node --test test/parcelles.test.js",
+    "test:irrigation": "node --test test/irrigation.test.js",
+    "test:recoltes": "node --test test/recoltes.test.js",
+    "test:donnees": "node --test test/donnees.test.js",
+    "test:rapport": "node --test test/rapport.test.js",
+    "test:station": "node --test test/station.test.js"
+  }
+}

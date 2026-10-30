@@ -1,0 +1,6 @@
+[
+  { "id": "C-P01", "parcelle": "P01", "delai": 800, "enLigne": true, "humidite": 54 },
+  { "id": "C-P02", "parcelle": "P02", "delai": 1200, "enLigne": true, "humidite": 33 },
+  { "id": "C-P05", "parcelle": "P05", "delai": 600, "enLigne": false, "humidite": null },
+  { "id": "C-P07", "parcelle": "P07", "delai": 1000, "enLigne": true, "humidite": 63 }
+]
