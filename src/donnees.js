@@ -32,7 +32,7 @@ export async function chargerDonnees(dossier) {
 //   → { parcelle: 'P07', date: '2026-10-29', humidite: 64, temperature: 29 }
 export function creerReleve(parcelle, humiditeTexte, temperatureTexte, date) {
   if (typeof parcelle !== "string" || parcelle.trim() === "") {
-    throw new Error("La parcelle est obligatoire");
+    throw new Error('La parcelle est obligatoire');
   }
   const idParcelle = parcelle.trim().toUpperCase();
 
@@ -54,7 +54,7 @@ export function creerReleve(parcelle, humiditeTexte, temperatureTexte, date) {
     String(temperatureTexte).trim() === "" ||
     !Number.isFinite(temperature)
   ) {
-    throw new Error("La température doit être un nombre");
+    throw new Error('La température doit être un nombre');
   }
 
   return { parcelle: idParcelle, date, humidite, temperature };
@@ -74,4 +74,3 @@ export async function ajouterReleve(chemin, releve) {
   await writeFile(chemin, JSON.stringify(releves, null, 2), "utf-8");
   return releves.length;
 }
-
