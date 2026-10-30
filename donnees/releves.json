@@ -124,11 +124,5 @@
     "date": "2026-10-28",
     "humidite": 74,
     "temperature": 26
-  },
-  {
-    "parcelle": "P07",
-    "date": "2026-10-30",
-    "humidite": 64,
-    "temperature": 29
   }
 ]

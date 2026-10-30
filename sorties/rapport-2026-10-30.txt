@@ -1,0 +1,13 @@
+=== RAPPORT AGRISUIVI DU 2026-10-30 ===
+Parcelles suivies : 8
+Surface totale : 15.5 ha
+
+--- Irrigation ---
+À arroser : P02, P04
+À drainer : P05, P08
+Sans relevé : P07
+
+--- Récoltes ---
+Production totale : 26800 kg
+Revenu estimé : 10650000 FCFA
+Meilleure parcelle : P01 (Awa Diallo) avec 3300000 FCFA
