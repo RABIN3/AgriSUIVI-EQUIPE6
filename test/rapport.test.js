@@ -1,35 +1,53 @@
-import test from 'node:test';
-import assert from 'node:assert/strict';
-import { readFile, rm } from 'node:fs/promises';
-import { join } from 'node:path';
-import { construireRapport, enregistrerRapport, listerParEtat } from '../src/rapport.js';
+// ÉQUIPE — Rapport : assembler le travail des quatre membres.
+// Fiche : fiches/5-equipe-rapport.md · Vérifier : npm run test:rapport
+import { mkdir, writeFile } from "node:fs/promises";
+import { dirname } from "node:path";
+import { surfaceTotale } from "./parcelles.js";
+import { alertesIrrigation } from "./irrigation.js";
+import { bilanRecoltes, classerParRevenu } from "./recoltes.js";
 
-const donnees = {
-  cultures: [
-    { code: 'cacao', nom: 'Cacao', prixKg: 2000, humiditeMin: 40, humiditeMax: 70 },
-    { code: 'riz', nom: 'Riz', prixKg: 300, humiditeMin: 60, humiditeMax: 90 },
-  ],
-  parcelles: [
-    { id: 'A1', producteur: 'Ama', localite: 'Man', culture: 'cacao', surface: 2 },
-    { id: 'A2', producteur: 'Moussa', localite: 'Odienné', culture: 'riz', surface: 1.5 },
-    { id: 'A3', producteur: 'Nina', localite: 'Man', culture: 'cacao', surface: 0.5 },
-  ],
-  releves: [
-    { parcelle: 'A1', date: '2026-10-26', humidite: 30, temperature: 30 },
-    { parcelle: 'A2', date: '2026-10-26', humidite: 75, temperature: 28 },
-  ],
-  recoltes: [
-    { parcelle: 'A1', date: '2026-09-01', kg: 800 },
-    { parcelle: 'A2', date: '2026-09-15', kg: 3000 },
-    { parcelle: 'A3', date: '2026-10-01', kg: 200 },
-  ],
-};
+// Renvoie les id des alertes qui ont cet état, séparés par ', ', ou 'aucune'.
+export function listerParEtat(alertes, etat) {
+  const ids = alertes
+    .filter((alerte) => alerte.etat === etat)
+    .map((alerte) => alerte.id);
+  return ids.length > 0 ? ids.join(', ') : 'aucune';
+}
 
-test('listerParEtat liste les id ou répond aucune', () => {
-  const alertes = [{ id: 'A1', etat: 'ARROSER' }, { id: 'A2', etat: 'OK' }, { id: 'A3', etat: 'ARROSER' }];
-  assert.equal(listerParEtat(alertes, 'ARROSER'), 'A1, A3');
-  assert.equal(listerParEtat(alertes, 'DRAINER'), 'aucune');
-});
+// Renvoie le texte complet du rapport (voir fiches/5-equipe-rapport.md).
+export function construireRapport(donnees, date) {
+  const { parcelles, cultures, releves, recoltes } = donnees;
+  const alertes = alertesIrrigation(parcelles, releves, cultures);
+  const bilan = bilanRecoltes(parcelles, recoltes, cultures);
+  const classement = classerParRevenu(bilan);
+  const productionTotale = bilan.reduce((total, ligne) => total + ligne.kg, 0);
+  const revenuTotal = bilan.reduce((total, ligne) => total + ligne.revenu, 0);
+  const meilleureParcelle = classement[0];
+
+  const lignes = [
+    `=== RAPPORT AGRISUIVI DU ${date} ===`,
+    `Parcelles suivies : ${parcelles.length}`,
+    `Surface totale : ${surfaceTotale(parcelles)} ha`,
+    '',
+    '--- Irrigation ---',
+    `À arroser : ${listerParEtat(alertes, 'ARROSER')}`,
+    `À drainer : ${listerParEtat(alertes, 'DRAINER')}`,
+    `Sans relevé : ${listerParEtat(alertes, 'INCONNU')}`,
+    '',
+    '--- Récoltes ---',
+    `Production totale : ${productionTotale} kg`,
+    `Revenu estimé : ${revenuTotal} FCFA`,
+    `Meilleure parcelle : ${meilleureParcelle.id} (${meilleureParcelle.producteur}) avec ${meilleureParcelle.revenu} FCFA`,
+    '',
+  ];
+  return lignes.join('\n');
+}
+
+// Écrit le texte dans le fichier demandé. Crée le dossier s'il n'existe pas.
+export async function enregistrerRapport(chemin, texte) {
+  await mkdir(dirname(chemin), { recursive: true });
+  await writeFile(chemin, texte, 'utf8');
+}
 
 test('construireRapport produit exactement le texte attendu', () => {
   const attendu = [
