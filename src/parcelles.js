@@ -23,11 +23,6 @@ export function surfaceTotale(parcelles) {
   return parcelles.reduce((total, parcelle) => total + parcelle.surface, 0);
 }
 
-// Renvoie la somme des surfaces (en hectares). Liste vide : 0.
-export function surfaceTotale(parcelles) {
-  return parcelles.reduce((total, parcelle) => total + parcelle.surface, 0);
-}
-
 // Renvoie un objet : pour chaque culture, le nombre de parcelles et leur surface.
 // Exemple : { cacao: { nombre: 2, surface: 5 }, riz: { nombre: 1, surface: 1 } }
 export function resumeParCulture(parcelles) {
